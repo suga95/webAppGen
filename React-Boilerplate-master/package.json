@@ -1,0 +1,22 @@
+{
+  "name": "react-boilerplate",
+  "version": "1.0.0",
+  "description": "![](http://i.imgur.com/5Bqs5zi.png)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-clean-css": "^2.0.10",
+    "gulp-sass": "^2.3.1"
+  },
+  "dependencies": {
+    "express": "^4.16.3",
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1"
+  }
+}

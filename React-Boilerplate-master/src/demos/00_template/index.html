@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>React - Template</title>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <link rel="stylesheet" type="text/css" href="../../css/main.css">
+    <script src="../../js/react.min.js"></script>
+    <script src="../../js/react-dom.min.js"></script>
+    <script src="../../js/browser.min.js"></script>
+
+
+    <br>
+
+
+
+    <script>
+        $(document).on('click', '.browse', function(){
+            var file = $(this).parent().parent().parent().find('.file');
+            file.trigger('click');
+        });
+        $(document).on('change', '.file', function(){
+            $(this).parent().find('.form-control').val($(this).val().replace(/C:\\fakepath\\/i, ''));
+        });
+    </script>
+
+    <style>
+        .file {
+            visibility: hidden;
+            position: absolute;
+        }
+    </style>
+
+    <div id="container"></div><br>
+
+</head>
+<body>
+
+
+<div class="container" >
+
+    <div class="form-group">
+        <input type="file" name="json[]" class="file">
+        <div class="input-group col-xs-12">
+            <span class="input-group-addon">Upload Logic File</span>
+            <input type="text" class="form-control input-lg" disabled placeholder="Upload Logic File">
+
+            <span class="input-group-btn" >
+                <button class="browse btn btn-primary input-lg" type="button"><i class="glyphicon glyphicon-search"></i> Browse</button>
+            </span>
+        </div>
+
+    </div>
+    <div class="form-group">
+        <input type="file" name="json[]" class="file">
+        <div class="input-group col-xs-12">
+            <span class="input-group-addon">Upload UI Design File</span>
+            <input type="text" class="form-control input-lg" disabled placeholder="Upload UI File">
+            <span class="input-group-btn">
+                <button class="browse btn btn-primary input-lg" type="button"><i class="glyphicon glyphicon-search"></i> Browse</button>
+            </span>
+        </div>
+    </div>
+    <div class="form-group text-center" id="btn">
+    </div>
+    <div class="form-group text-center" id ="btn2">
+    </div>
+</div>
+
+<div class="container" id="hello"></div>
+
+<!--<div id="page-wrapper">-->
+
+    <h1>Text File Reader</h1>
+    <div>
+        Select a text file:
+        <input type="file" id="fileInput">
+    </div>
+    <pre id="fileDisplayArea"></pre>
+
+<!--</div>-->
+
+
+
+
+
+
+<!-- Below have components of ReactJs -->
+
+    <!--<div id="container"></div>-->
+    <!--<div id="Name"></div>-->
+
+    <script type="text/babel">
+//        ReactDOM.render(
+//            <h2>Welcome to React!</h2>,
+//            document.getElementById('container')
+//        );
+
+
+        var B = React.createClass({
+            render:function(){
+                return (
+                    <div>
+                        <h1> Web Application Generator </h1>
+                        <h2> Upload JSON files Accordingly</h2>
+                    </div>
+
+                );
+            }
+        });
+        ReactDOM.render(
+            <div className="board">
+            <B />
+            </div>, document.getElementById("container"));
+
+//        remember to find a way to add a container background color by calling className="board" inside react state
+
+//        ReactDOM.render(
+//        <div className="board">
+//
+//        </div>, document.getElementById("container"));
+
+
+////////////////////// Area Below is for Event Handling of Buttons Submition and Run //////////////////////////
+
+        var SubmitBtn = React.createClass({
+            press:function () {
+                alert("Value Added");
+
+//                window.onload = function() {
+//                    var fileInput = document.getElementById('fileInput');
+//                    var fileDisplayArea = document.getElementById('fileDisplayArea');
+//
+//                    fileInput.addEventListener('change', function(e) {
+//                        var file = fileInput.files[0];
+//                        var textType = /json.*/;
+//                        console.log(file);
+//
+//                        if (file.type.match(textType)) {
+//                            var reader = new FileReader();
+//
+//                            reader.onload = function(e) {
+//                                fileDisplayArea.innerText = reader.result;
+//                                console.log(reader.result);
+//                            }
+//
+//                            reader.readAsText(file);
+//                            console.log(reader.readAsText(file));
+//                        } else {
+//                            fileDisplayArea.innerText = "File not supported!"
+//                        }
+//                    });
+//                }
+            },
+//            press2:function () {
+//                alert("Value Validated");
+//            },
+
+            render:function(){
+                return (
+                        <div>
+                            <button type="submit" onClick={this.press} className="btn btn-primary btn-lg" id="submitbtn" name="submit">Submit</button>
+                        </div>
+
+                );
+            }
+        });
+        var RunBtn = React.createClass({
+            press:function () {
+                alert("Generating Web Application........");
+            },
+            render:function () {
+                return(
+                    <div>
+                        <button type="button" onClick={this.press} className="btn btn-default btn-lg" name="run">Run</button>
+                    </div>
+                );
+            }
+        });
+        ReactDOM.render(
+            <div>
+                <SubmitBtn/>
+            </div>
+            ,document.getElementById('btn'));
+        ReactDOM.render(
+            <div>
+                <RunBtn/>
+            </div>, document.getElementById('btn2'));
+
+
+
+
+
+    </script>
+
+<script>
+    window.onload = function() {
+        var fileInput = document.getElementById('fileInput');
+        var fileDisplayArea = document.getElementById('fileDisplayArea');
+
+        fileInput.addEventListener('change', function(e) {
+            var file = fileInput.files[0];
+            var textType = /json.*/;
+            console.log(file);
+
+            if (file.type.match(textType)) {
+                var reader = new FileReader();
+
+                reader.onload = function(e) {
+                    fileDisplayArea.innerText = reader.result;
+                    console.log(reader.result);
+                }
+
+                reader.readAsText(file);
+                console.log(reader.readAsText(file));
+            } else {
+                fileDisplayArea.innerText = "File not supported!"
+            }
+        });
+    }
+</script>
+
+
+<!---- --->
+
+</body>
+</html>

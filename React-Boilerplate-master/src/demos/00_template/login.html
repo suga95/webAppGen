@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="../../js/react.min.js"></script>
+    <script src="../../js/react-dom.min.js"></script>
+    <script src="../../js/browser.min.js"></script>
+
+
+    <div id="heading"></div><br>
+</head>
+<body>
+
+<div class="container">
+
+        <div class="row">
+            <div class="col-sm-6 col-sm-offset-3">
+                <div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h2 class="panel-title"><center>User Login</center></h2>
+                        </div>
+                        <div class="panel-body">
+                            <form role="form">
+                                <fieldset>
+                                    <div class="form-group">
+                                        <a href="Register.html" class=""><font color="red">Register</font></a>
+                                    </div>
+                                    <div class="form-group">
+                                        <input class="form-control" placeholder="User Name" name="text" type="text" autofocus>
+                                    </div>
+                                    <div class="form-group">
+                                        <input class="form-control" placeholder="Password" name="password" type="password" value="">
+                                    </div>
+
+                                    <div class="form-group" id="loginBtn">
+                                        <!-- Change this to a button or input when using this as a form -->
+                                    </div>
+
+
+
+                                </fieldset>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+</div>
+
+
+<script type="text/babel">
+
+    var B = React.createClass({
+        render:function(){
+            return (
+                    <div>
+                        <h1> Web Application Generator </h1>
+                    </div>
+
+            );
+        }
+    });
+    ReactDOM.render(<B />, document.getElementById("heading"));
+
+    ////////////////////// Area Below is for Event Handling of Button Login //////////////////////////
+
+    var LoginBtn = React.createClass({
+        press:function () {
+            alert("Loging in......");
+        },
+        render:function () {
+            return(
+                    <div>
+                        <button type="button" onClick={this.press} className="btn btn-success btn-block">Login</button>
+                    </div>
+            );
+        }
+    });
+    ReactDOM.render(
+            <div>
+                <LoginBtn/>
+            </div>
+        ,document.getElementById('loginBtn'));
+
+</script>
+
+
+</body>
+</html>

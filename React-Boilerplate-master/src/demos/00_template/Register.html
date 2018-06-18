@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <br>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="../../js/react.min.js"></script>
+    <script src="../../js/react-dom.min.js"></script>
+    <script src="../../js/browser.min.js"></script>
+
+
+    <div id="heading"></div><br>
+</head>
+<body>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <div class="panel panel-primary">
+                <div class="panel-heading"><h3><center>User Registration</center></h3></div>
+                <div class="panel-body">
+                    <form role="Form" method="post" action="" accept-charset="UTF-8">
+                        <div class="form-group">
+                            <input type="text" id="fname" class="form-control" name="fname" placeholder="Enter First Name">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" id="lname" class="form-control" name="lname" placeholder="Enter Last Name">
+                        </div>
+
+                        <div class="form-group">
+                            <input type="text" id="emailaddr" class="form-control" name="email" placeholder="Enter valid E-mail">
+                        </div>
+                        <div class="form-group">
+                            <input type="password" id="password" class="form-control" name="password" placeholder="Enter Password">
+                        </div>
+                        <div class="form-group">
+                            <input type="password" id="confirmpass" class="form-control" name="verifypass" placeholder="Confirm Password">
+                        </div>
+                        <div class="form-group text-center" id="btn">
+                        </div>
+                        <div class="form-group text-center" id="backBtn">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script type="text/babel">
+
+    var B = React.createClass({
+        render:function(){
+            return (
+                    <div>
+                        <h1> Web Application Generator </h1>
+                        <h2> Regiseter to gain User Credentials</h2>
+                    </div>
+
+            );
+        }
+    });
+    ReactDOM.render(<B />, document.getElementById("heading"));
+
+    ////////////////////// Area Below is for Event Handling of Button Register //////////////////////////
+
+    var RegisterBtn = React.createClass({
+        press:function () {
+            alert("Registered......");
+        },
+        render:function () {
+            return(
+                    <div>
+                        <button type="submit" onClick={this.press} className="btn btn-primary btn-lg" id="submitbtn" name="submit">Register</button>
+                    </div>
+            );
+        }
+    });
+
+    var BackBtn = React.createClass({
+        render:function () {
+            return (
+                <div>
+                    <a href="login.html">Back</a>
+                </div>
+            );
+        }
+    });
+    ReactDOM.render(
+            <div>
+                <RegisterBtn/>
+            </div>
+        ,document.getElementById('btn'));
+    ReactDOM.render(
+        <div>
+            <BackBtn/>
+        </div>, document.getElementById('backBtn')
+    );
+
+</script>
+
+</body>
+</html>

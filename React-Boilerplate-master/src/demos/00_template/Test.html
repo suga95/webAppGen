@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <link rel="stylesheet" type="text/css" href="../../css/main.css">
+    <script src="../../js/react.min.js"></script>
+    <script src="../../js/react-dom.min.js"></script>
+    <script src="../../js/browser.min.js"></script>
+</head>
+<body>
+
+<div id="container" class="container"></div>
+
+<div id="nope"></div>
+
+<script type="text/babel">
+    //        ReactDOM.render(
+    //            <h2>Welcome to React!</h2>,
+    //            document.getElementById('container')
+    //        );
+
+
+//    var B = React.createClass({
+//        render:function(){
+//            return (
+//                    <div>
+//                        <h1> {this.props.name }</h1>
+//                        <h2> {this.props.desp}</h2>
+//                    </div>
+//
+//            );
+//        }
+//    });
+
+//    ReactDOM.render(
+//        <div>
+//            <B name = "Web Application Generator" desp = "Upload JSON files Accordingly" />
+//            <B name ="Mobile App Gen" desp="-Do-"/>
+//        </div>
+//        , document.getElementById("heading"));
+
+//    var Comment = React.createClass({
+//        edit:function(){
+//            alert("button edited");
+//        },
+//        render:function () {
+//            return(
+//                <div className="commentContainer">
+//                    <div className="commentText">Comment Text</div>
+//                    <button className="button-primary">Edit</button>
+//                    <button onClick={this.edit} className="button-danger">Remove</button>
+//                </div>
+//            );
+//        }
+//    });
+//
+//    ReactDOM.render(
+//        <div className="board">
+//            <Comment/>
+//        </div>, document.getElementById('container')
+//    );
+
+//    <div class="form-group">
+//        <input type="file" name="json[]" class="file">
+//            <div class="input-group col-xs-12">
+//                <span class="input-group-addon">Upload Logic File</span>
+//                <input type="text" class="form-control input-lg" disabled placeholder="Upload Logic File">
+//            <span class="input-group-btn">
+//                <button class="browse btn btn-primary input-lg" type="button"><i class="glyphicon glyphicon-search"></i> Browse</button>
+//            </span>
+//            </div>
+//    </div>
+
+    var Value = React.createClass({
+        render:function () {
+            return(
+                <div className="commentContainer">
+                    <div className="form-group"></div>
+                    <div className="input-group">
+                        <span className="input-group-addon">Upload Logic File</span>
+                        <input type="file" className="file"></input>
+                            <span className="input-group-btn">
+                                <button className="browse btn btn-primary input-lg" type="button"><i className="glyphicon glyphicon-search"></i> Browse</button>
+                            </span>
+
+
+                    </div>
+
+                </div>
+            );
+        }
+    });
+
+    ReactDOM.render(
+    <div className="board">
+        <Value />
+    </div>
+        ,document.getElementById('container') );
+
+</script>
+
+</body>
+</html>
